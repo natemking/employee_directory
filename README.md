@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Follow Your Money - A PWA Budget Tracker
+Homework # 18 PWA: Online/Offline Budget Trackers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- [Offline Budget Tracker Deploy Link](https://follow-yr-money.herokuapp.com/) -->
 
-## Available Scripts
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/natemking/employee_directory/blob/main/LICENSE)
 
-In the project directory, you can run:
+![react badge](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB")
+<!-- ![html5 badge](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=flat&logo=html5&logoColor=white)
+![css3 badge](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=flat&logo=css3&logoColor=white)
+![javascript badge](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=flat&logo=javascript&logoColor=%23F7DF1E)
+![node.js badge](https://img.shields.io/badge/Node.js%20-%2343853D.svg?&style=flat&logo=node.js&logoColor=white)
+![express badge](https://img.shields.io/badge/Express.js%20-%23404d59.svg?&style=flat&logo=node.js&logoColor=white)
+![mongodb badge](https://img.shields.io/badge/MongoDB-%234ea94b.svg?&style=flat&logo=mongodb&logoColor=white)
+![mongoose badge](https://img.shields.io/badge/Mongoose-%23800.svg?&style=flat&logoColor=white)
+![webpack badge](https://img.shields.io/badge/webpack%20-%238DD6F9.svg?&style=flat&logo=webpack&logoColor=black) -->
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
+## Table of Contents
+ * [Description](#description)
+    <!-- + [Scope of Work](#scope-of-work)
+    + [Progressive Web App Summary](#progressive-web-app-summary)
+    + [Refactor and Redesign](#refactor-and-redesign)
+    + [Added Functionality](#added-functionality)
+    + [Modularization and Webpack](#modularization-and-webpack) -->
+  * [Screenshots](#screenshots)
+  * [Installation Notes](#installation-notes)
+  * [License](#license)
+  * [Credits](#credits)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Description
 
-### `npm test`
+### Scope of Work
+User Story
+```
+As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+<!-- ![app gif](public/assets/images/screenshots/follow-your-money.gif)
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_App Functionality_
+<br> -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
+Licensed under the GNU GPLv3.0 License. Copyright © 2020
 
-### `npm run eject`
+## Credits
+<!-- 
+* [Capitalize the first letter of every word with one line of code](https://www.freecodecamp.org/news/how-to-capitalize-words-in-javascript/)  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* [Random Color Palate](https://mycolor.space/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* [Merge Multiple objects w/ sum of values by using the reduce() method](https://dev.to/ramonak/javascript-how-to-merge-multiple-objects-with-sum-of-values-43fd)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* [Using Fetch w/ async/await](https://dmitripavlutin.com/javascript-fetch-async-await/) 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* [Auto/ being applied the webpack-pwa-manifest icon file path output](https://github.com/arthurbergmz/webpack-pwa-manifest/issues/149)
 
-## Learn More
+* [Fix 'regenerator runtime is not defined error'](https://flaviocopes.com/parcel-regeneratorruntime-not-defined/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [Use CSS to have an element appear on hover](https://stackoverflow.com/questions/19062120/make-a-div-appear-on-hover-over-another-div)  -->
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+GitHub: [@natemking](https://github.com/natemking/)
 
-### Analyzing the Bundle Size
+Email: [natmeking@gmail.com](mailto:natmeking@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
