@@ -51,7 +51,7 @@ Licensed under the GNU GPLv3.0 License. Copyright © 2020
 
 ## Credits
 <!-- 
-* [Capitalize the first letter of every word with one line of code](https://www.freecodecamp.org/news/how-to-capitalize-words-in-javascript/)  
+* [Capitalize the first letter of every word with one line of code](<span>Photo by <a href="https://unsplash.com/@tannerboriack?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tanner Boriack</a> on <a href="https://unsplash.com/s/photos/data-center?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>)  
 
 * [Random Color Palate](https://mycolor.space/)
 
