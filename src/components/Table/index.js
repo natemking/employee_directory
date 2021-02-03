@@ -1,65 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.css';
-import { API }from '../../utils/API'
+import TableRow from './TableRow';
 
-
-
-class Table extends Component {
-  state = { 
-    employee: [],
-  }
-
-  componentDidMount(){
-    this.searchRandoUser();
-  }
-
-  // Search for Random Users to populate the employee table
-  searchRandoUser = async () => {
-    try {
-      // Call the Random User API and assign the results to the user var
-      const users = await API.search();
-      // Destructure the results to just the results key
-      const  { results } = users.data
-      // Set the state to the results 
-      this.setState({ employee: results })
-    } catch (err) { console.error(err) }
-  }
-  
-  render() { 
-    return ( 
+const Table = (props) => {
+   
+    
+    // Map the data from the API and assign it to a var to be rendered
+    const tR =  props.data.map( employee => (
+        <TableRow key={ employee.id.value } employee={ employee }/>
+    ))
+     
+    // Render the table with the mapped rows of employee data
+    return (
         <table className="table table-light table-striped table-responsive-sm col-10 mx-auto mt-5">
-          <thead className="thead-dark">
-            <tr>
-              <th scope="col"></th>
-            <th className="table__heading" scope="col">First<i class="fas fa-sort"></i></th>
-            <th className="table__heading" scope="col">Last<i class="fas fa-sort"></i></th>
-            <th className="table__heading" scope="col">Cell<i class="fas fa-sort"></i></th>
-            <th className="table__heading" scope="col">Email<i class="fas fa-sort"></i></th>
-            <th className="table__heading" scope="col">Start Date<i class="fas fa-sort"></i></th>
-            </tr>
-          </thead>
-          <tbody>
-          {/* Map the employees returned from the API call in state to the table rows */}
-          {this.state.employee.map((employee, i) => (
-            <tr key={`row-${i}`}>
-              <td className="align-middle" type="photo" key={`photo-${i}`}><img src={employee.picture.large} alt="employee" /></td>
-              <td className="align-middle" type="firstName" key={`first-${i}`}>{employee.name.first}</td>
-              <td className="align-middle" type="lastName" key={`last-${i}`}>{employee.name.last}</td>
-              <td className="align-middle" type="phone" key={`cell-${i}`}>{employee.cell}</td>
-              <td className="align-middle" type="email" key={`email-${i}`}>{employee.name.email}</td>
-              <td className="align-middle" type="startDate" key={`startDate-${i}`}>
-                {/* Convert the ISO date returned from the API into mm/dd/yyyy format */}
-                {new Date(employee.registered.date).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })}
-              </td>
-            </tr>
-          ))}
-          </tbody>
+            <thead className="thead-dark">
+                <tr>
+                    <th scope="col"></th>
+                    <th className="table__heading" scope="col">
+                        First
+                        <i className="fas fa-sort" onClick={props.sort}></i>
+                    </th>
+                    <th className="table__heading" scope="col">
+                        Last
+                        <i className="fas fa-sort"></i>
+                    </th>
+                    <th className="table__heading" scope="col">
+                        Cell
+                        <i className="fas fa-sort"></i>
+                    </th>
+                    <th className="table__heading" scope="col">
+                        Email
+                        <i className="fas fa-sort"></i>
+                    </th>
+                    <th className="table__heading" scope="col">
+                        Start Date
+                        <i className="fas fa-sort"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                { tR }
+            </tbody>
         </table>
-     );
-  }
+    )
 }
- 
+
 export default Table;
-
-
- 

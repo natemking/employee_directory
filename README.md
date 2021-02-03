@@ -55,7 +55,7 @@ Licensed under the GNU GPLv3.0 License. Copyright © 2020
 
 * [change bootstrap input focus glow](https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow)
 
-* [Merge Multiple objects w/ sum of values by using the reduce() method](https://dev.to/ramonak/javascript-how-to-merge-multiple-objects-with-sum-of-values-43fd)
+* [Applying lists and Keys correctly in React](https://reactjs.org/docs/lists-and-keys.html)
 
 * [Using Fetch w/ async/await](https://dmitripavlutin.com/javascript-fetch-async-await/) 
 
