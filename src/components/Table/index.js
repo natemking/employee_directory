@@ -38,14 +38,14 @@ class Table extends Component {
           </thead>
           <tbody>
           {/* Map the employees returned from the API call in state to the table rows */}
-          {this.state.employee.map(employee => (
-            <tr>
-              <td className="align-middle" type="photo"><img src={employee.picture.large} alt="employee" /></td>
-              <td className="align-middle" type="firstName">{employee.name.first}</td>
-              <td className="align-middle" type="lastName">{employee.name.last}</td>
-              <td className="align-middle" type="phone">{employee.cell}</td>
-              <td className="align-middle" type="email">{employee.name.email}</td>
-              <td className="align-middle" type="startDate">
+          {this.state.employee.map((employee, i) => (
+            <tr key={`row-${i}`}>
+              <td className="align-middle" type="photo" key={`photo-${i}`}><img src={employee.picture.large} alt="employee" /></td>
+              <td className="align-middle" type="firstName" key={`first-${i}`}>{employee.name.first}</td>
+              <td className="align-middle" type="lastName" key={`last-${i}`}>{employee.name.last}</td>
+              <td className="align-middle" type="phone" key={`cell-${i}`}>{employee.cell}</td>
+              <td className="align-middle" type="email" key={`email-${i}`}>{employee.name.email}</td>
+              <td className="align-middle" type="startDate" key={`startDate-${i}`}>
                 {/* Convert the ISO date returned from the API into mm/dd/yyyy format */}
                 {new Date(employee.registered.date).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })}
               </td>
