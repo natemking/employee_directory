@@ -53,7 +53,7 @@ Licensed under the GNU GPLv3.0 License. Copyright © 2020
 <!-- 
 * [Capitalize the first letter of every word with one line of code](<span>Photo by <a href="https://unsplash.com/@tannerboriack?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tanner Boriack</a> on <a href="https://unsplash.com/s/photos/data-center?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>)  
 
-* [Random Color Palate](https://mycolor.space/)
+* [change bootstrap input focus glow](https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow)
 
 * [Merge Multiple objects w/ sum of values by using the reduce() method](https://dev.to/ramonak/javascript-how-to-merge-multiple-objects-with-sum-of-values-43fd)
 
