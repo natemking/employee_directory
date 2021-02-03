@@ -13,13 +13,15 @@ class Table extends Component {
     this.searchRandoUser();
   }
 
+  // Search for Random Users to populate the employee table
   searchRandoUser = async () => {
     try {
+      // Call the Random User API and assign the results to the user var
       const users = await API.search();
+      // Destructure the results to just the results key
       const  { results } = users.data
-      
+      // Set the state to the results 
       this.setState({ employee: results })
-      console.log(this.state.employee)
     } catch (err) { console.error(err) }
   }
   
