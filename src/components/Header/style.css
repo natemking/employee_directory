@@ -9,10 +9,17 @@
 }
 
 .header h1{
+    font-size: calc(1.5rem + 1.5vw);
     color: #c1c1c1;
     font-family: 'Orbitron', sans-serif;
     font-weight: 800;
     position: absolute;
     left: 0; bottom: 0; right: 0;
     margin-bottom: 20px;
+}
+
+@media (max-width: 450px){
+    .header {
+        height: 36vmin;
+    }
 }
