@@ -2,3 +2,14 @@
     box-shadow: 0px 2px 5px #909090;
     border-radius: 5px;
 }
+
+.fa-sort {
+    margin-left: 10px;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+    visibility: hidden;
+}
+
+.table__heading:hover .fa-sort{
+    cursor: pointer;
+    visibility: visible;
+}

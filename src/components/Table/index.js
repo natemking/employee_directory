@@ -31,11 +31,11 @@ class Table extends Component {
           <thead className="thead-dark">
             <tr>
               <th scope="col"></th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Cell</th>
-              <th scope="col">Email</th>
-              <th scope="col">Start Date</th>
+            <th className="table__heading" scope="col">First<i class="fas fa-sort"></i></th>
+            <th className="table__heading" scope="col">Last<i class="fas fa-sort"></i></th>
+            <th className="table__heading" scope="col">Cell<i class="fas fa-sort"></i></th>
+            <th className="table__heading" scope="col">Email<i class="fas fa-sort"></i></th>
+            <th className="table__heading" scope="col">Start Date<i class="fas fa-sort"></i></th>
             </tr>
           </thead>
           <tbody>
