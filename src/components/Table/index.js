@@ -37,6 +37,7 @@ class Table extends Component {
             </tr>
           </thead>
           <tbody>
+          {/* Map the employees returned from the API call in state to the table rows */}
           {this.state.employee.map(employee => (
             <tr>
               <td className="align-middle" type="photo"><img src={employee.picture.large} alt="employee" /></td>
@@ -45,7 +46,8 @@ class Table extends Component {
               <td className="align-middle" type="phone">{employee.cell}</td>
               <td className="align-middle" type="email">{employee.name.email}</td>
               <td className="align-middle" type="startDate">
-                {new Date(employee.registered.date).toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' })}
+                {/* Convert the ISO date returned from the API into mm/dd/yyyy format */}
+                {new Date(employee.registered.date).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })}
               </td>
             </tr>
           ))}
