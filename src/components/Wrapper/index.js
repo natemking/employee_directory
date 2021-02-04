@@ -4,7 +4,11 @@ import { API } from '../../utils/API'
 import Table from '../Table'
 import SearchBar from '../SearchBar'
 
+// Var for the sort on click functionality
+let sort = true
+
 class Wrapper extends Component {
+    
     state = {
         employees: [],
     }
@@ -22,13 +26,24 @@ class Wrapper extends Component {
             const { results } = users.data
             // Set the state to the results 
             this.setState({ employees: results })
-            console.log(results.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1));
+            // console.log(results);
         } catch (err) { console.error(err) }
     }
 
-    sortAlpha = () => {
-        // this.state.employees.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
-        console.log("click");
+    // Sort the data in the table coloumns
+    sortData = (key, key2) => {
+        // If sort it true, sort the asc by the column clicked else sort desc and set state. Note this is a nested ternary.
+        sort ? (
+            this.setState(key2 === undefined ?
+            this.state.employees.sort((a, b) => (a[key] > b[key]) ? 1 : -1) :
+            this.state.employees.sort((a, b) => (a[key][key2] > b[key][key2]) ? 1 : -1))
+        ) : (
+            this.setState(key2 === undefined ?
+            this.state.employees.sort((a, b) => (a[key] > b[key]) ? -1 : 1) :
+            this.state.employees.sort((a, b) => (a[key][key2] > b[key][key2]) ? -1 : 1))
+        );
+        
+        sort = !sort
     }
     
     render() { 
@@ -37,7 +52,7 @@ class Wrapper extends Component {
                 <SearchBar /> 
                 <Table 
                     data={this.state.employees} 
-                    sort={this.sortAlpha}
+                    sort={this.sortData}
                 />
             </main>
          )

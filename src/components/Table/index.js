@@ -18,23 +18,23 @@ const Table = (props) => {
                     <th scope="col"></th>
                     <th className="table__heading" scope="col">
                         First
-                        <i className="fas fa-sort" onClick={props.sort}></i>
+                        <i className="fas fa-sort" onClick={() => {props.sort('name', 'first')}}></i>
                     </th>
                     <th className="table__heading" scope="col">
                         Last
-                        <i className="fas fa-sort"></i>
+                        <i className="fas fa-sort" onClick={() => { props.sort('name', 'last') }}></i>
                     </th>
                     <th className="table__heading" scope="col">
                         Cell
-                        <i className="fas fa-sort"></i>
+                        <i className="fas fa-sort" onClick={() => {props.sort('cell')}}></i>
                     </th>
                     <th className="table__heading" scope="col">
                         Email
-                        <i className="fas fa-sort"></i>
+                        <i className="fas fa-sort" onClick={() => { props.sort('email') }}></i>
                     </th>
                     <th className="table__heading" scope="col">
                         Start Date
-                        <i className="fas fa-sort"></i>
+                        <i className="fas fa-sort" onClick={() => { props.sort('registered', 'date') }}></i>
                     </th>
                 </tr>
             </thead>
