@@ -31,9 +31,10 @@ class Wrapper extends Component {
         } catch (err) { console.error(err) }
     }
 
-    // Sort the data in the table coloumns
+    // Sort the data in the table columns
     sortEmployees = (key, key2) => {
-        // If sort it true, sort the asc by the column clicked else sort desc and set state. Note this is a nested ternary.
+        
+        // If sort is true, sort the asc by the column clicked else sort desc and set state. Note this is a nested ternary.
         sort ? (
             this.setState(key2 === undefined ?
             this.state.employees.sort((a, b) => (a[key] > b[key]) ? 1 : -1) :

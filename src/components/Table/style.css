@@ -1,6 +1,7 @@
 .table {
     box-shadow: 0px 2px 5px #909090;
     border-radius: 5px;
+    white-space: nowrap;
 }
 
 .fa-sort {
