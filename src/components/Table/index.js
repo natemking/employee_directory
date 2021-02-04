@@ -4,7 +4,6 @@ import TableRow from './TableRow';
 
 const Table = (props) => {
    
-    
     // Map the data from the API and assign it to a var to be rendered
     const tR =  props.data.map( employee => (
         <TableRow key={ employee.id.value } employee={ employee }/>

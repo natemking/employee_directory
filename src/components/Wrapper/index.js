@@ -11,27 +11,28 @@ class Wrapper extends Component {
     
     state = {
         employees: [],
+        saved: [],
         search: ''
     }
 
     componentDidMount() {
-        this.searchRandoUser();
+        this.searchRandomUser();
     }
 
     // Search for Random Users to populate the employee table
-    searchRandoUser = async () => {
+    searchRandomUser = async () => {
         try {
             // Call the Random User API and assign the results to the user var
             const users = await API.search();
             // Destructure the results to just the results key
             const { results } = users.data
             // Set the state to the results 
-            this.setState({ employees: results })
+            this.setState({ employees: results, saved: results })
         } catch (err) { console.error(err) }
     }
 
     // Sort the data in the table coloumns
-    sortData = (key, key2) => {
+    sortEmployees = (key, key2) => {
         // If sort it true, sort the asc by the column clicked else sort desc and set state. Note this is a nested ternary.
         sort ? (
             this.setState(key2 === undefined ?
@@ -46,25 +47,33 @@ class Wrapper extends Component {
         sort = !sort
     }
     
-
+    
     handleInputChange = (e) => {
         e.preventDefault();
         // Destructure name & value from event.target
-        const { name , value } = e.target
+        const { name , value } = e.target;
+        const { saved } = this.state;
          // Set results to state
         this.setState({ [name]: value })
 
-        let filtered = this.state.employees.filter((search) => {
-            const fullName = `${search.name.first} ${search.name.last}`
-            return  fullName.toLowerCase().includes(this.state.search.toLowerCase())
-        })
-       
-        console.log(filtered);
-        this.setState({ employees: filtered })
+        const updateSearchResults = async () => {
+            // Reset the state to the original employee list
+            await this.setState({ employees: saved });
+            // Filter out employees that match user query for name or phone#
+            let filtered = await this.state.employees.filter((search) => {
+                const fullName = `${search.name.first} ${search.name.last}`;
+                const phone = search.cell.replace(/[()-]/g, '');
+
+                return fullName.toLowerCase().includes(this.state.search.toLowerCase()) || phone.includes(this.state.search)
+            });
+            // Update the state with the filtered results
+            this.setState({ employees: filtered });
+        }
+        updateSearchResults()
         
     }  
 
-    
+    // Render the child elements
     render() { 
         return ( 
             <main className="wrapper">
@@ -75,7 +84,7 @@ class Wrapper extends Component {
                 /> 
                 <Table 
                     data={this.state.employees} 
-                    sort={this.sortData}
+                    sort={this.sortEmployees}
                 />
             </main>
          )
