@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import TableRow from './TableRow';
+import TableRow from '../TableRow';
 
 const Table = (props) => {
    

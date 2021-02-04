@@ -7,7 +7,7 @@ const SearchBar = (props) => {
       className="input-group input-group-lg col-md-4 mx-auto mt-5" 
       id="search" 
       onSubmit={e => { e.preventDefault(); }}
-      >
+    >
       <input
         onChange={props.handleInputChange}
         value={props.search}
@@ -15,7 +15,7 @@ const SearchBar = (props) => {
         type="text" 
         className="form-control" 
         aria-label="Employee Search"
-        placeholder="Search by name" 
+        placeholder="Search by name or phone#" 
       />
     </form>
   )

@@ -19,7 +19,7 @@ class Wrapper extends Component {
         this.searchRandomUser();
     }
 
-    // Search for Random Users to populate the employee table
+    // Search for Random users to populate the employee table
     searchRandomUser = async () => {
         try {
             // Call the Random User API and assign the results to the user var
@@ -33,13 +33,14 @@ class Wrapper extends Component {
 
     // Sort the data in the table columns
     sortEmployees = (key, key2) => {
-        
-        // If sort is true, sort the asc by the column clicked else sort desc and set state. Note this is a nested ternary.
+        // If sort is true, sort the asc by the column clicked else sort desc and set state of the employee list. Note this is a nested ternary. Some of the data has two properties hence the 2 paramters in the function but the ternary with one or two properties.
         sort ? (
+            // Ascending
             this.setState(key2 === undefined ?
             this.state.employees.sort((a, b) => (a[key] > b[key]) ? 1 : -1) :
             this.state.employees.sort((a, b) => (a[key][key2] > b[key][key2]) ? 1 : -1))
         ) : (
+            // Descending
             this.setState(key2 === undefined ?
             this.state.employees.sort((a, b) => (a[key] > b[key]) ? -1 : 1) :
             this.state.employees.sort((a, b) => (a[key][key2] > b[key][key2]) ? -1 : 1))
@@ -48,7 +49,7 @@ class Wrapper extends Component {
         sort = !sort
     }
     
-    
+    // Allow user to type for a name or phone number and the list dynamically filters to show the results and reveres the search as characters are deleted 
     handleInputChange = (e) => {
         e.preventDefault();
         // Destructure name & value from event.target
@@ -71,7 +72,6 @@ class Wrapper extends Component {
             this.setState({ employees: filtered });
         }
         updateSearchResults()
-        
     }  
 
     // Render the child elements
@@ -81,7 +81,6 @@ class Wrapper extends Component {
                 <SearchBar 
                     search={this.state.search}
                     handleInputChange={this.handleInputChange}
-
                 /> 
                 <Table 
                     data={this.state.employees} 
@@ -92,6 +91,4 @@ class Wrapper extends Component {
     }
 }
 
-
- 
 export default Wrapper;
