@@ -11,6 +11,7 @@ class Wrapper extends Component {
     
     state = {
         employees: [],
+        search: ''
     }
 
     componentDidMount() {
@@ -26,7 +27,6 @@ class Wrapper extends Component {
             const { results } = users.data
             // Set the state to the results 
             this.setState({ employees: results })
-            // console.log(results);
         } catch (err) { console.error(err) }
     }
 
@@ -42,14 +42,37 @@ class Wrapper extends Component {
             this.state.employees.sort((a, b) => (a[key] > b[key]) ? -1 : 1) :
             this.state.employees.sort((a, b) => (a[key][key2] > b[key][key2]) ? -1 : 1))
         );
-        
+
         sort = !sort
     }
+    
+
+    handleInputChange = (e) => {
+        e.preventDefault();
+        // Destructure name & value from event.target
+        const { name , value } = e.target
+         // Set results to state
+        this.setState({ [name]: value })
+
+        let filtered = this.state.employees.filter((search) => {
+            const fullName = `${search.name.first} ${search.name.last}`
+            return  fullName.toLowerCase().includes(this.state.search.toLowerCase())
+        })
+       
+        console.log(filtered);
+        this.setState({ employees: filtered })
+        
+    }  
+
     
     render() { 
         return ( 
             <main className="wrapper">
-                <SearchBar /> 
+                <SearchBar 
+                    search={this.state.search}
+                    handleInputChange={this.handleInputChange}
+
+                /> 
                 <Table 
                     data={this.state.employees} 
                     sort={this.sortData}
@@ -58,5 +81,7 @@ class Wrapper extends Component {
          )
     }
 }
+
+
  
 export default Wrapper;

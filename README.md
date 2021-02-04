@@ -57,7 +57,7 @@ Licensed under the GNU GPLv3.0 License. Copyright © 2020
 
 * [Applying lists and Keys correctly in React](https://reactjs.org/docs/lists-and-keys.html)
 
-* [Using Fetch w/ async/await](https://dmitripavlutin.com/javascript-fetch-async-await/) 
+* [Sort and array of objects by keys of the objects](https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/) 
 
 * [Auto/ being applied the webpack-pwa-manifest icon file path output](https://github.com/arthurbergmz/webpack-pwa-manifest/issues/149)
 
