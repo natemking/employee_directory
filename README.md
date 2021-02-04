@@ -14,12 +14,9 @@ Homework #19 React: Employee Directory
 ## Table of Contents
  * [Description](#description)
     + [Scope of Work](#scope-of-work)
-    <!-- + [Progressive Web App Summary](#progressive-web-app-summary)
-    + [Refactor and Redesign](#refactor-and-redesign)
-    + [Added Functionality](#added-functionality)
-    + [Modularization and Webpack](#modularization-and-webpack) -->
+    + [Rendering](#rendering)
+    + [State, Search, and Sort](#state-search-and-sort)
   * [Screenshots](#screenshots)
-  * [Installation Notes](#installation-notes)
   * [License](#license)
   * [Credits](#credits)
 
